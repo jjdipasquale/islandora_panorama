@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for this module.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * @see islandora_panorama_islandora_required_objects()
+ */
+function islandora_panorama_install() {
+  module_load_include('inc', 'islandora', 'includes/solution_packs');
+  islandora_install_solution_pack('islandora_panorama');
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function islandora_panorama_uninstall() {
+  module_load_include('inc', 'islandora', 'includes/solution_packs');
+  islandora_install_solution_pack('islandora_panorama', 'uninstall');
+  $variables = array(
+    'islandora_panorama_ingest_derivatives',
+  );
+  array_walk($variables, 'variable_del');
+}
