@@ -30,7 +30,7 @@ function islandora_panorama_menu() {
       ),
     ),
     'islandora/object/%islandora_object/manage/panorama' => array(
-      'title' => 'Panorama',
+      'title' => 'Panorama and Cube Faces',
       'type' => MENU_LOCAL_TASK,
       'page callback' => 'islandora_paged_content_manage_pages_menu',
       'page arguments' => array(2),
